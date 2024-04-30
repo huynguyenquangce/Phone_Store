@@ -22,6 +22,7 @@ As an admin, you can also have some features below:
 - Add New
 - Add Product
 - Add account
+
 **The default account of admin is:**
 - username: admin@gmail.com 
 - password: 12345
