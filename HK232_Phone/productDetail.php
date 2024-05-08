@@ -1,13 +1,13 @@
 <?php
-require("connectDB.php");
+require ("connectDB.php");
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $id_cmt = $id;
 $sql = "SELECT brand_id, products_name, image_desc_1,image_desc_2, image_desc_3, price, discount FROM product WHERE products_id = $id";
-$result_sql = $conn -> query($sql);
+$result_sql = $conn->query($sql);
 
 if (!$result_sql) {
-    die("Lỗi truy vấn: " . $conn->error);
+  die("Lỗi truy vấn: " . $conn->error);
 }
 
 $row_name = $result_sql->fetch_assoc();
@@ -17,9 +17,9 @@ $sql_brand_name = "SELECT brand_name FROM brand WHERE brand_id = $brand_id";
 $result_sql_brand_name = $conn->query($sql_brand_name);
 
 if (!$result_sql_brand_name) {
-    die("Lỗi truy vấn: " . $conn->error);
-  }
-  
+  die("Lỗi truy vấn: " . $conn->error);
+}
+
 $row_brand_name = $result_sql_brand_name->fetch_assoc();
 
 $sql_rating_avg = "SELECT AVG(rating) AS rating_avg FROM reviews WHERE pr_id = $id";
@@ -32,55 +32,51 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
 } else {
   echo "Không tìm thấy đánh giá nào.";
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $row_name['products_name'] ?></title>
-  <meta name="description" content="Trang web bán laptop <?php echo $row_name['products_name'] ?> chất lượng với giá cả hợp lý.">
-  <meta name="keywords" content="laptop, mua laptop <?php echo $row_name['products_name'] ?>, giá laptop <?php echo $row_name['products_name'] ?>">
+  <meta name="description"
+    content="Trang web bán phone <?php echo $row_name['products_name'] ?> chất lượng với giá cả hợp lý.">
+  <meta name="keywords"
+    content="phone, mua phone <?php echo $row_name['products_name'] ?>, giá phone <?php echo $row_name['products_name'] ?>">
   <link rel="stylesheet" href="./icon/fontawesome-free-6.2.0-web/css/all.min.css">
-  <link rel="icon" href="./img/ltnn.png">
-  <link rel="stylesheet" href="./icon/fontawesome-free-6.2.0-web/css/all.min.css">
+  <link rel="icon" href="./img/logo.png">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/e26d989c97.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/e26d989c97.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="app">
     <?php
-    include("pages/header.php")
-    ?>
+    include ("pages/header.php")
+      ?>
     <!-- Category -->
     <div class="category">
       <div class="main">
@@ -106,12 +102,16 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
           <div class="row gx-5 product_info product-section">
             <div class="col-lg-6 col-md-12  rounded product_info_left">
               <div class="">
-                <div class="laptop">
-                  <div id="carouselExampleIndicators" class=" carousel carousel-dark slide slide carousel-fade" data-bs-ride="carousel">
+                <div class="phone">
+                  <div id="carouselExampleIndicators" class=" carousel carousel-dark slide slide carousel-fade"
+                    data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
                       <div class="clear"></div>
                     </div>
                     <div class="carousel-inner">
@@ -125,11 +125,13 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                         <img src="<?php echo $row_name['image_desc_3'] ?>" class="d-block" alt="No image">
                       </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </button>
@@ -147,7 +149,7 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                   <span>
                     <i class="fa-solid fa-tag "></i>
                   </span>
-                  Trả góp <b>0%</b> 
+                  Trả góp <b>0%</b>
                 </li>
                 <li class="list-group-item p-3">
                   <span>
@@ -164,11 +166,11 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                 $rating_avg1 = round($rating_avg);
                 for ($i = 0; $i < $rating_avg1; $i++) { ?>
                   <span><i class="fa-solid fa-star fa-starActive"></i></span>
-                <?php
+                  <?php
                 }
                 for ($i = $rating_avg1; $i < 5; $i++) { ?>
                   <span><i class="fa-solid fa-star"></i></span>
-                <?php
+                  <?php
                 }
                 ?>
               </div>
@@ -180,28 +182,37 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                 <h4 class="product_info_promotion-title">ƯU ĐÃI ĐI KÈM</h4>
                 <ul>
                   <li class="text-success d-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path
+                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
                     </svg>
                     <p class="text-dark">Giá sốc bảo hành rơi vỡ 6 tháng giá chỉ 999.000đ</p>
                   </li>
                   <li class="text-success d-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path
+                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
                     </svg>
                     <p class="text-dark">Thu cũ đổi mới Chợ Tốt - Giảm 1,700,000đ khi thu cũ iPhone qua Chợ Tốt</p>
                   </li>
                   <li class="text-success d-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path
+                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
                     </svg>
                     <p class="text-dark">Tặng PMH 40,000đ khi mua sim 4G FPT FLEX69 1T kèm máy (Data 4GB/ngày)</p>
                   </li>
                   <li class="text-success d-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path
+                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
                     </svg>
-                    <p class="text-dark">Đặc quyền dành cho sinh viên - Tặng phiếu mua hàng 100,000đ mua Số Đẹp Sim FPT</p>
+                    <p class="text-dark">Đặc quyền dành cho sinh viên - Tặng phiếu mua hàng 100,000đ mua Số Đẹp Sim FPT
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -235,15 +246,15 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
               <h4 class="product-detail__name">Thông số kỹ thuật</h4>
               <ul class="list-group product-detail__list">
                 <li class="list-group-item pd10">Màn hình: 6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels</li>
-                <li class="list-group-item list-group-item-secondary pd10">Camera sau:	48.0 MP + 12.0 MP + 12.0 MP</li>
-                <li class="list-group-item pd10">Camera Selfie:	12.0 MP</li>
-                <li class="list-group-item list-group-item-secondary pd10">RAM:	8 GB</li>
-                <li class="list-group-item pd10">Bộ nhớ trong:	256 GB</li>
-                <li class="list-group-item list-group-item-secondary pd10">CPU:	Apple A17 Pro</li>
+                <li class="list-group-item list-group-item-secondary pd10">Camera sau: 48.0 MP + 12.0 MP + 12.0 MP</li>
+                <li class="list-group-item pd10">Camera Selfie: 12.0 MP</li>
+                <li class="list-group-item list-group-item-secondary pd10">RAM: 8 GB</li>
+                <li class="list-group-item pd10">Bộ nhớ trong: 256 GB</li>
+                <li class="list-group-item list-group-item-secondary pd10">CPU: Apple A17 Pro</li>
                 <li class="list-group-item pd10">Dung lượng pin: 4.422 mAh</li>
                 <li class="list-group-item list-group-item-secondary pd10">Thẻ sim: 1 eSIM, 1 Nano SIM</li>
-                <li class="list-group-item pd10">Hệ điều hành:	iOS 17</li>
-                <li class="list-group-item list-group-item-secondary pd10">Thời gian ra mắt:	09/2023</li>
+                <li class="list-group-item pd10">Hệ điều hành: iOS 17</li>
+                <li class="list-group-item list-group-item-secondary pd10">Thời gian ra mắt: 09/2023</li>
 
               </ul>
               <!-- Button to Open the Modal -->
@@ -267,28 +278,32 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                       <ul class="list-group">
                         <li class="list-group-item list-group-item-secondary">
                           <h4>Thiết kế & Trọng lượng</h4>
-                        <li class ="list-group-item list-group-item-light "> <b>Kích thước: </b>159.9 x 76.7 x 8.25 mm</li>
-                        <li class="list-group-item list-group-item-light"><b>Trọng lượng sản phẩm: </b> 	221 g</li>
+                        <li class="list-group-item list-group-item-light "> <b>Kích thước: </b>159.9 x 76.7 x 8.25 mm
+                        </li>
+                        <li class="list-group-item list-group-item-light"><b>Trọng lượng sản phẩm: </b> 221 g</li>
                         <li class="list-group-item list-group-item-light"><b>Chuẩn kháng nước / Bụi bẩn: </b>IP68</li>
                         <li class="list-group-item list-group-item-light"><b>Chất liệu: </b>Khung máy: Titanium</li>
                         </li>
-                        <li class="list-group-item list-group-item-secondary">   
+                        <li class="list-group-item list-group-item-secondary">
                           <h4>Bộ xử lí</h4>
                         <li class="list-group-item list-group-item-light"><b>Phiên bản CPU:</b> Apple A17 Pro</li>
                         <li class="list-group-item list-group-item-light"><b>Loại CPU</b>: 6 - Core</li>
                         </li>
-                        <li class="list-group-item list-group-item-secondary"> 
+                        <li class="list-group-item list-group-item-secondary">
                           <h4>RAM và lưu trữ</h4>
                         <li class="list-group-item list-group-item-light"><b>RAM </b> 8 GB</li>
                         <li class="list-group-item list-group-item-light"><b>Bộ nhớ trong </b> 256 GB </li>
                         <li class="list-group-item list-group-item-light"><b>Khe cắm thẻ nhớ</b> Không </li>
-                        </li> 
-                        <li class="list-group-item list-group-item-secondary"> 
+                        </li>
+                        <li class="list-group-item list-group-item-secondary">
                           <h4>Màn hình</h4>
                         <li class="list-group-item list-group-item-light"><b>Kích thước màn hình </b> 6.7 inches </li>
-                        <li class="list-group-item list-group-item-light"><b>Công nghệ màn hình </b> Super Retina XDR OLED </li>
-                        <li class="list-group-item list-group-item-light"><b>Độ phân giải màn hình</b> 2796 x 1290-pixel </li>
-                        <li class="list-group-item list-group-item-light"><b>Tính năng màn hình</b> <ul>
+                        <li class="list-group-item list-group-item-light"><b>Công nghệ màn hình </b> Super Retina XDR
+                          OLED </li>
+                        <li class="list-group-item list-group-item-light"><b>Độ phân giải màn hình</b> 2796 x 1290-pixel
+                        </li>
+                        <li class="list-group-item list-group-item-light"><b>Tính năng màn hình</b>
+                          <ul>
                             <li>Tốc độ làm mới 120Hz</li>
                             <li>460 ppi</li>
                             <li>HDR</li>
@@ -298,12 +313,14 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                             <li>Tỷ lệ tương phản 2.000.000:1</li>
                           </ul>
                         </li>
-                        </li> 
+                        </li>
                         <li class="list-group-item list-group-item-secondary">
                           <h5>Đồ họa và Âm thanh</h5>
                         </li>
-                        <li class="list-group-item list-group-item-light"><b>Card màn hình:</b> Card rời - NVIDIA GeForce GTX 1650 4 GB</li>
-                        <li class="list-group-item list-group-item-light"><b>Công nghệ âm thanh:</b> Acer TrueHarmonyDTS X:Ultra Audio</li>
+                        <li class="list-group-item list-group-item-light"><b>Card màn hình:</b> Card rời - NVIDIA
+                          GeForce GTX 1650 4 GB</li>
+                        <li class="list-group-item list-group-item-light"><b>Công nghệ âm thanh:</b> Acer TrueHarmonyDTS
+                          X:Ultra Audio</li>
                         <li class="list-group-item list-group-item-secondary">
                           <h5>Cổng kết nối & tính năng mở rộng</h5>
                         </li>
@@ -316,14 +333,17 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                             <li>LAN (RJ45)</li>
                           </ul>
                         </li>
-                        <li class="list-group-item list-group-item-light"><b>Kết nối không dây:</b> Wi-Fi 6 (802.11ax)Bluetooth 5.1</li>
+                        <li class="list-group-item list-group-item-light"><b>Kết nối không dây:</b> Wi-Fi 6
+                          (802.11ax)Bluetooth 5.1</li>
                         <li class="list-group-item list-group-item-light"><b>Webcam:</b> HD webcam</li>
-                        <li class="list-group-item list-group-item-light"><b>Tính năng khác:</b> Đèn bàn phím chuyển màu RGB</li>
+                        <li class="list-group-item list-group-item-light"><b>Tính năng khác:</b> Đèn bàn phím chuyển màu
+                          RGB</li>
                         <li class="list-group-item list-group-item-light"><b>Đèn bàn phím:</b> Có</li>
                         <li class="list-group-item list-group-item-secondary">
                           <h5>Kích thước & khối lượng</h5>
                         </li>
-                        <li class="list-group-item list-group-item-light"><b>Kích thước, khối lượng:</b> Dài 363.4 mm - Rộng 255 mm - Dày 23.9 mm - Nặng 2.2 kg</li>
+                        <li class="list-group-item list-group-item-light"><b>Kích thước, khối lượng:</b> Dài 363.4 mm -
+                          Rộng 255 mm - Dày 23.9 mm - Nặng 2.2 kg</li>
                         <li class="list-group-item list-group-item-light"><b>Chất liệu:</b> Vỏ nhựa</li>
                         <li class="list-group-item list-group-item-secondary">
                           <h5>Thông tin khác</h5>
@@ -340,7 +360,7 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
             </div>
           </div>
 
-          
+
           <!-- Product suggestions  -->
           <div class="row gx-5 product-suggestions__wrap product-section">
             <h3 class="product-detail__title">SẢN PHẨM DÀNH RIÊNG CHO BẠN</h3>
@@ -355,7 +375,8 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                 <div class="product-item product-suggestions-item">
                   <span class="tra-gop mt-bottom25">Trả góp 0%</span>
                   <a href="productdetail.php?id=<?php echo $$row_products_random['products_id']; ?>">
-                    <img src="<?php echo $row_products_random['image'] ?>" alt="no image" class="product-item__img pd-bottom25" style="margin:0 auto;">
+                    <img src="<?php echo $row_products_random['image'] ?>" alt="no image"
+                      class="product-item__img pd-bottom25" style="margin:0 auto;">
                   </a>
                   <div class="rate fl">
                     <?php
@@ -370,11 +391,11 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                     $rating_avg_random = round($rating_avg_random);
                     for ($i = 0; $i < $rating_avg_random; $i++) { ?>
                       <span><i class="fa-solid fa-star fa-starActive"></i></span>
-                    <?php
+                      <?php
                     }
                     for ($i = $rating_avg_random; $i < 5; $i++) { ?>
                       <span><i class="fa-solid fa-star"></i></span>
-                    <?php
+                      <?php
                     }
                     ?>
                   </div>
@@ -393,7 +414,7 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                   </div>
                 </div>
 
-              <?php
+                <?php
               }
               ?>
             </div>
@@ -415,11 +436,11 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                       $rating_avg = round($rating_avg);
                       for ($i = 0; $i < $rating_avg; $i++) { ?>
                         <span><i class="fa-solid fa-star fa-starActive"></i></span>
-                      <?php
+                        <?php
                       }
                       for ($i = $rating_avg; $i < 5; $i++) { ?>
                         <span><i class="fa-solid fa-star"></i></span>
-                      <?php
+                        <?php
                       }
                       ?>
                     </div>
@@ -431,7 +452,7 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                         $row_count_cmt = $result_count_cmt->fetch_assoc();
                         $total_cmt = $row_count_cmt['total'];
                         echo $total_cmt; ?> đánh giá
-                      <?php
+                        <?php
                       } else {
                         echo "Không tìm thấy bình luận nào.";
                       }
@@ -531,13 +552,13 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                 $limit = 4; // Số lượng bình luận trên mỗi trang
                 $page = isset($_GET['page']) ? $_GET['page'] : 1; // Trang hiện tại
                 $start = ($page - 1) * $limit; // Bắt đầu lấy dữ liệu từ bản ghi thứ $start
-
+                
                 // Truy vấn lấy tổng số bình luận của sản phẩm
                 $sql_count = "SELECT COUNT(*) AS total FROM reviews WHERE pr_id = $id";
                 $result_count = $conn->query($sql_count);
                 $row_count = $result_count->fetch_assoc();
                 $total_records = $row_count['total']; // Tổng số bình luận
-
+                
                 // Tính tổng số trang
                 $total_pages = ceil($total_records / $limit);
 
@@ -550,7 +571,8 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                     <div class="product_review_cmt_item ">
                       <div class="product_review_cmt-title">
                         <div class="product_review_cmt-title-wrap d-flex align-items-center">
-                          <img src="./img/category/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="no image" class="avt-review">
+                          <img src="./img/category/24-248253_user-profile-default-image-png-clipart-png-download.png"
+                            alt="no image" class="avt-review">
                           <p class="name-review"><?php echo $row['name']; ?></p>
                           <div class="date-review"> - <?php echo $row['time']; ?></div>
                         </div>
@@ -558,11 +580,11 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                           <?php
                           for ($i = 0; $i < $row['rating']; $i++) { ?>
                             <span><i class="fa-solid fa-star fa-starActive"></i></span>
-                          <?php
+                            <?php
                           }
                           for ($i = $row['rating']; $i < 5; $i++) { ?>
                             <span><i class="fa-solid fa-star"></i></span>
-                          <?php
+                            <?php
                           }
                           ?>
                         </div>
@@ -571,7 +593,7 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                         </p>
                       </div>
                     </div>
-                <?php
+                    <?php
                   }
                 } else {
                   echo "Không tìm thấy đánh giá nào.";
@@ -583,17 +605,23 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
                 <ul class="pagination justify-content-center mt-4 " id="pagination">
                   <?php if ($page > 1) { ?>
                     <li class="page-item">
-                      <a class="page-link" href="productdetail.php?id=<?php echo $id_cmt ?>&page=<?php echo $page - 1; ?>"><i class="fa-solid fa-chevron-left"></i></a>
+                      <a class="page-link"
+                        href="productdetail.php?id=<?php echo $id_cmt ?>&page=<?php echo $page - 1; ?>"><i
+                          class="fa-solid fa-chevron-left"></i></a>
                     </li>
                   <?php } ?>
                   <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
-                    <li class="page-item <?php if ($i == $page) echo 'active'; ?>">
-                      <a class="page-link" href="productdetail.php?id=<?php echo $id_cmt ?>&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    <li class="page-item <?php if ($i == $page)
+                      echo 'active'; ?>">
+                      <a class="page-link"
+                        href="productdetail.php?id=<?php echo $id_cmt ?>&page=<?php echo $i; ?>"><?php echo $i; ?></a>
                     </li>
                   <?php } ?>
                   <?php if ($page < $total_pages) { ?>
                     <li class="page-item">
-                      <a class="page-link" href="productdetail.php?id=<?php echo $id_cmt ?>&page=<?php echo $page + 1; ?>"><i class="fa-solid fa-chevron-right"></i></a>
+                      <a class="page-link"
+                        href="productdetail.php?id=<?php echo $id_cmt ?>&page=<?php echo $page + 1; ?>"><i
+                          class="fa-solid fa-chevron-right"></i></a>
                     </li>
                   <?php } ?>
                 </ul>
@@ -606,8 +634,8 @@ if ($result_rating_avg && $result_rating_avg->num_rows > 0) {
 
     <!-- Footer -->
     <?php
-    include("pages/footer.php")
-    ?>
+    include ("pages/footer.php")
+      ?>
   </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

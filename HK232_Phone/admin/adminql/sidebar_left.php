@@ -64,6 +64,24 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Quản lý đơn hàng</span> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="../order/list.php" class="nav-link px-0 text-white">Danh sách đơn hàng</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Quản lí bình luận</span> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="../review/list.php" class="nav-link px-0 text-white">Danh sách bình luận</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <hr>
                 </div>

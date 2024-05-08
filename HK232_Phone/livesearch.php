@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "tuananh");
+require_once "connectDB.php";
 
 // Kiểm tra kết nối
 if (!$conn) {

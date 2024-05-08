@@ -244,11 +244,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </ul>
             </div>
             <div class="header_left fl">
-                <div class="header__logo">
+                <!-- <div class="header__logo">
                     <a href="index.php">
-                        <img src="./img/ltnn.png" alt="" class="logo-img">
+                        <img src="./img/logo.jpg" alt="" class="logo-img">
                     </a>
-                </div>
+                </div> -->
                 <ul class="header__list">
                     <li class="header__item"><a href="index.php" class="header__item-link">Trang chủ</a></li>
                     <li class="header__item"><a href="intro.php" class="header__item-link">Giới thiệu</a></li>

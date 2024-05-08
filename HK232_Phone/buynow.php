@@ -18,7 +18,7 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh toán</title>
-    <link rel="icon" href="./img/ltnn.png">
+    <link rel="icon" href="./img/logo.png">
     <link rel="stylesheet" href="./icon/fontawesome-free-6.2.0-web/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="css/main.css">

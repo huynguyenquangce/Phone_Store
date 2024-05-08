@@ -8,7 +8,6 @@ $sql = "SELECT * FROM new where new_id = $new_id";
 $result = $conn->query($sql);
 $new = $result->fetch_assoc();
 
-
 $count = $conn->prepare("UPDATE new SET view_count= view_count+1 WHERE new_id = $new_id");
 $count->execute();
 
@@ -36,7 +35,6 @@ $cart = json_decode($cart);
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- ------------- -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo $new["new_title"] ?></title>
@@ -59,11 +57,7 @@ $cart = json_decode($cart);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/responsive.css">
 </head>
-
 <body>
     <div class="app">
         <?php
@@ -150,7 +144,8 @@ $cart = json_decode($cart);
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/main1.js"></script>
 </body>
-
 </html>

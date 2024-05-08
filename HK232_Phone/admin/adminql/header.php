@@ -10,8 +10,8 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/mrtzt9vk9yjjc7zjvzhqi2h9mm3v2nv36s9mxesnjtaqhs89/tinymce/7/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/bwta2r4keq8zzd0weinvagkb1unw3mpjg94r9mdemb57pfjq/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
 </head>
 <body>
     <header>
