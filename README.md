@@ -1,15 +1,15 @@
 ## Description
 - ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin1.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin2.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin3.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin4.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/main.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/info.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/news.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/shop.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/shopinfo.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/login.png))
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/signup.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin2.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin3.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin4.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/main.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/info.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/news.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/shop.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/shopinfo.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/login.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/signup.png))
 ## Techstack
 - **[HTML]** - Hypertext Markup Language, used to create the structure and content of web pages.
 - **[CSS]** -  Cascading Style Sheets, used for styling and customizing the appearance of web pages.
