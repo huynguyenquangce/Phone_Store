@@ -8,7 +8,7 @@
 - ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/news.png)
 - ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/shop.png)
 - ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/shopinfo.png)
-- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/login.png)
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/login%20.png)
 - ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/signup.png)
 ## Techstack
 - **[HTML]** - Hypertext Markup Language, used to create the structure and content of web pages.
