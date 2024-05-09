@@ -1,5 +1,5 @@
 ## Description
-- ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin1.png))
+- ![alt text](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin1.png))
 - ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin2.png))
 - ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin3.png))
 - ![alt text]([http://url/to/img.png](https://github.com/huynguyenquangce/Phone_Store/blob/main/public/admin4.png))
